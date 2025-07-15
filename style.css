@@ -9,6 +9,11 @@
       --border-color: #333;
     }
 
+    body,
+    html {
+      overflow-x: hidden;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
@@ -336,20 +341,33 @@
       }
     }
 
-  @media (max-width: 768px) {
-  .network-status {
-    top: 10px;
-    right: auto;
-    left: 10px;
-    font-size: 0.7rem;
-    padding: 6px 10px;
-  }
+    @media (max-width: 768px) {
+      .network-status {
+        top: 10px;
+        right: auto;
+        left: 10px;
+        font-size: 0.7rem;
+        padding: 6px 10px;
+      }
 
-  .performance-indicator {
-    bottom: 60px;
-    right: auto;
-    left: 10px;
-    font-size: 0.7rem;
-    padding: 6px 10px;
-  }
-}
+      .performance-indicator {
+        bottom: 60px;
+        right: auto;
+        left: 10px;
+        font-size: 0.7rem;
+        padding: 6px 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .glass-card {
+        padding: 15px;
+      }
+    }
