@@ -335,3 +335,21 @@
         height: 350px;
       }
     }
+
+  @media (max-width: 768px) {
+  .network-status {
+    top: 10px;
+    right: auto;
+    left: 10px;
+    font-size: 0.7rem;
+    padding: 6px 10px;
+  }
+
+  .performance-indicator {
+    bottom: 60px;
+    right: auto;
+    left: 10px;
+    font-size: 0.7rem;
+    padding: 6px 10px;
+  }
+}
