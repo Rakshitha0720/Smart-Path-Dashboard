@@ -1,0 +1,337 @@
+    :root {
+      --primary-color: #00bfff;
+      --secondary-color: #17c671;
+      --accent-color: #ffc107;
+      --danger-color: #dc3545;
+      --dark-bg: #0a0a0a;
+      --card-bg: #1a1a1a;
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --border-color: #333;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      min-height: 100vh;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .font-orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+    }
+
+    .header-glow {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+    }
+
+    #mapContainer {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      margin-bottom: 1rem;
+      border: 2px solid #00bfff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0, 191, 255, 0.2);
+    }
+
+    #map,
+    #mapCanvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    #mapCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s;
+    }
+
+    .stat-card:hover::before {
+      left: 100%;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 10px 0;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .emoji-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .chart-container {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 20px;
+      border: 1px solid var(--border-color);
+      height: 100%;
+    }
+
+    .insights-header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+
+    .btn-modern {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      border-radius: 10px;
+      padding: 12px 24px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-modern:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 191, 255, 0.4);
+    }
+
+    .modal-content {
+      background-color: #111;
+    }
+
+    .btn {
+      border-radius: 6px;
+    }
+
+    .nav-tabs .nav-link {
+      cursor: pointer;
+    }
+
+    .form-control {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: white;
+      border-radius: 10px;
+    }
+
+    .form-control:focus {
+      background: var(--card-bg);
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.2rem rgba(0, 191, 255, 0.25);
+      color: white;
+    }
+
+    .live-stats {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 15px;
+      border: 1px solid var(--border-color);
+    }
+
+    .live-stats p {
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+
+    .live-stats span {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+
+    .simulation-status {
+      background: linear-gradient(45deg, #ffc107, #ff6b35);
+      color: #000;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 10px;
+      text-align: center;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      #mapContainer {
+        height: 350px;
+      }
+    }
+
+    #startInput::placeholder,
+    #endInput::placeholder,
+    #simEndInput::placeholder,
+    #simStartInput::placeholder {
+      color: white;
+      opacity: 0.5;
+    }
+
+    #startInput,
+    #endInput,
+    #simEndInput,
+    #simStartInput {
+      color: white;
+      background-color: #343a40;
+      border: 1px solid #6c757d;
+    }
+
+
+    /* Network status indicator */
+    .network-status {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 10000;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .network-status.online {
+      border-color: var(--secondary-color);
+      color: var(--secondary-color);
+    }
+
+    .network-status.offline {
+      border-color: var(--danger-color);
+      color: var(--danger-color);
+    }
+
+    /* Performance indicator */
+    .performance-indicator {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 10000;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      font-family: 'Orbitron', sans-serif;
+      opacity: 0.8;
+    }
+
+    .performance-indicator.good {
+      border-color: var(--secondary-color);
+      color: var(--secondary-color);
+    }
+
+    .performance-indicator.moderate {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .performance-indicator.poor {
+      border-color: var(--danger-color);
+      color: var(--danger-color);
+    }
+
+    /* Lazy loading animation */
+    .lazy-loading {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .lazy-loading.loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .loading-skeleton {
+      background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+
+    @keyframes loading {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      #mapContainer {
+        height: 350px;
+      }
+    }
