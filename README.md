@@ -1,4 +1,4 @@
-# Assignment Submission - Tap Invest Frontend Developer Internship
+# Assignment Submission - Tap Invest Frontend Developer 
 
 This repository is a submission for the assignment given by **Tap Invest** for the role of **Frontend Developer**.  
 I was required to build a useful and functional project utilizing at least **three** of the given Web APIs such as the **Geolocation API**, **Canvas API**, and others.
@@ -88,12 +88,14 @@ This app is designed for:
 
 Just open `index.html` in a browser. No backend or build step is required.
 
+ Deployed link for Demo https://rakshitha0720.github.io/Smart-Path-Dashboard/ 
+
 ---
 
 ## 📅 Author & Credits
 
 **Author**: *Rakshitha S*  
-This project was created as a submission for the **Frontend Developer Internship Assignment** by **Tap Invest**, using multiple modern Web APIs.
+This project was created as a submission for the **Frontend Developer Assignment** by **Tap Invest**, using multiple modern Web APIs.
 
 ---
 
